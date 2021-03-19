@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<!-- Bootstrap core CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet" >
-	    <!-- Bootstrap theme -->
-	    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	</head>
-	<body>
+<%@ include file="header.jsp" %>
+	<main>
 		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
+			<c:if test="${usuarioLogueado.getRol().getDescription() == 'student'}">
+				<h1 class="text-center mt-2 mb-5">Bienvenido alumno ${usuarioLogueado.getName()}!</h1>
+			</c:if>
+			<c:if test="${usuarioLogueado.getRol().getDescription() == 'admin'}">
+				<h1 class="text-center mt-2 mb-5">Bienvenido admin ${usuarioLogueado.getName()}!</h1>
+			</c:if>
+			<div class="d-flex flex-wrap justify-content-around">
+				<c:if test="${usuarioLogueado.getRol().getDescription() == 'admin'}">
+					<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/administrar">Administrar</a>
+				</c:if>
+				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/inscripcion">Inscribirse</a>
+				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/materia">Materias</a>
+			</div>
 		</div>
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
-		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	</body>
-</html>
+	</main>
+<%@ include file="footer.jsp" %>
