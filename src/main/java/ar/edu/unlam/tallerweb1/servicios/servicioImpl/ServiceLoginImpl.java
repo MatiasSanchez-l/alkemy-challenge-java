@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
-import ar.edu.unlam.tallerweb1.servicios.ServicioLogin;
+import ar.edu.unlam.tallerweb1.repositorios.RepositoryUsuario;
+import ar.edu.unlam.tallerweb1.servicios.ServiceLogin;
 import ar.edu.unlam.tallerweb1.modelo.User;
 
 // Implelemtacion del Servicio de usuarios, la anotacion @Service indica a Spring que esta clase es un componente que debe
@@ -18,12 +18,12 @@ import ar.edu.unlam.tallerweb1.modelo.User;
 // en hibernateCOntext.xml. De esta manera todos los metodos de cualquier dao invocados dentro de un servicio se ejecutan en la misma transaccion
 @Service("servicioLogin")
 @Transactional
-public class ServicioLoginImpl implements ServicioLogin {
+public class ServiceLoginImpl implements ServiceLogin {
 
-	private RepositorioUsuario servicioLoginDao;
+	private RepositoryUsuario servicioLoginDao;
 
 	@Autowired
-	public ServicioLoginImpl(RepositorioUsuario servicioLoginDao){
+	public ServiceLoginImpl(RepositoryUsuario servicioLoginDao){
 		this.servicioLoginDao = servicioLoginDao;
 	}
 

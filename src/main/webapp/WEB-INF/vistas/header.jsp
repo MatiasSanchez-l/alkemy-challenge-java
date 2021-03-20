@@ -16,7 +16,7 @@
 				</head>
 				<body>
 					<div>
-					<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom border-secondary">
   						<a class="navbar-brand" href="/ChallengeAlkemy/home">Alkemy</a>
   						<c:if test="${not empty usuarioLogueado}">
   							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,14 +34,17 @@
       								</c:if>
     								<c:if test="${usuarioLogueado.getRol().getDescription() == 'student' || usuarioLogueado.getRol().getDescription() == 'admin'}">
       									<li class="nav-item">
-        									<a class="nav-link" href="/ChallengeAlkemy/inscripcion">Inscripci&oacute;n</a>
+        									<a class="nav-link" href="/ChallengeAlkemy/inscripcion">Inscripci&oacute;n a Materias</a>
       									</li>
       									<li class="nav-item">
-        									<a class="nav-link" href="/ChallengeAlkemy/materia">Materias</a>
+        									<a class="nav-link" href="/ChallengeAlkemy/materia">Ver Materias</a>
+      									</li>
+      									<li class="nav-item">
+        									<a class="nav-link" href="/ChallengeAlkemy/materias-inscriptas">Materias En Curso</a>
       									</li>
       								</c:if>
       								<li class="nav-item">
-        								<a class="nav-link" href="cerrarSesion">Cerrar sesi&oacute;n</a>
+        								<a class="nav-link active" href="cerrarSesion">Cerrar sesi&oacute;n</a>
       								</li>
     							</ul>
   							</div>

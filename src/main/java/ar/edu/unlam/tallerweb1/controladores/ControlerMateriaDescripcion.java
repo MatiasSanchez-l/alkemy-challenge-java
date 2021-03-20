@@ -11,23 +11,24 @@ import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unlam.tallerweb1.modelo.User;
 
 @Controller
-public class ControladorMateriaInscripcion {
+public class ControlerMateriaDescripcion {
 	
-	@RequestMapping(path = "/inscripcion", method = RequestMethod.GET)
+	@RequestMapping(path = "/materia", method = RequestMethod.GET)
 	public ModelAndView irAHome(HttpServletRequest request) {
 		
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null
 				? (User) request.getSession().getAttribute("USUARIO")
 				: null;
 				
-	if (usuarioLogueado == null) {
+		if (usuarioLogueado == null) {
 			return new ModelAndView("redirect:/login");
 				}
 		
 		ModelMap modelo = new ModelMap();
 		
 		modelo.put("usuarioLogueado", usuarioLogueado);
-		modelo.put("title", "Inscripcion");
-		return new ModelAndView("inscripcion", modelo);
+		modelo.put("title", "Materia");
+		return new ModelAndView("materia", modelo);
 	}
+
 }

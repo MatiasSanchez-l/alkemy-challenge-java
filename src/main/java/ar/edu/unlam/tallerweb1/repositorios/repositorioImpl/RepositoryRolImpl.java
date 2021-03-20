@@ -6,10 +6,10 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import ar.edu.unlam.tallerweb1.modelo.Rol;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioRol;
+import ar.edu.unlam.tallerweb1.repositorios.RepositoryRol;
 
 @Repository
-public class RepositorioRolImpl implements RepositorioRol {
+public class RepositoryRolImpl implements RepositoryRol {
 	@Autowired
 	private SessionFactory sessionFactory;
 	

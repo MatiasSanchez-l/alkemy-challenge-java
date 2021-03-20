@@ -1,7 +1,7 @@
 package ar.edu.unlam.tallerweb1.repositorios.repositorioImpl;
 
 import ar.edu.unlam.tallerweb1.modelo.User;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
+import ar.edu.unlam.tallerweb1.repositorios.RepositoryUsuario;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,12 +12,12 @@ import org.springframework.stereotype.Repository;
 import javax.inject.Inject;
 
 @Repository("repositorioUsuario")
-public class RepositorioUsuarioImpl implements RepositorioUsuario {
+public class RepositoryUserImpl implements RepositoryUsuario {
 	@Autowired
 	private SessionFactory sessionFactory;
 
     @Autowired
-	public RepositorioUsuarioImpl(SessionFactory sessionFactory){
+	public RepositoryUserImpl(SessionFactory sessionFactory){
 		this.sessionFactory = sessionFactory;
 	}
 

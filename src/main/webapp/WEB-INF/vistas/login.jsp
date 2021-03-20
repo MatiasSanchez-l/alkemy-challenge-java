@@ -29,8 +29,8 @@
                                     <input type="password" id="password" name="password" class="form-control" placeholder="Contrasenia123" />
                                 </div>
                                 <div class="form-label-group mb-4">
-    								<label for="rol ">*Tipo</label>
-    								<select class="form-control" id="rol" name="rol">
+    								<label for="rol">*Tipo</label>
+    								<select class="form-control text-dark" id="rol" name="rol">
     									<option value="admin">Admin</option>
       									<option value="student" selected>Alumno</option>
     								</select>
