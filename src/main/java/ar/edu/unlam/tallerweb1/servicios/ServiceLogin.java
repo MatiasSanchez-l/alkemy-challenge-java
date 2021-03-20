@@ -5,5 +5,5 @@ import ar.edu.unlam.tallerweb1.modelo.User;
 // Interface que define los metodos del Servicio de Usuarios.
 public interface ServiceLogin {
 
-	User consultarUsuario(User usuario);
+	User getUser(User usuario);
 }

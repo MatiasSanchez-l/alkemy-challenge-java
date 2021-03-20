@@ -96,7 +96,7 @@ public class ControlerLogin {
 		usuario.setPassword(password);
 		usuario.setRol(rolUsuario);
 		
-		User usuarioBuscado = servicioLogin.consultarUsuario(usuario);
+		User usuarioBuscado = servicioLogin.getUser(usuario);
 		
 		if(dniVacio.equals(false) && legajoVacio.equals(false) && passwordVacio.equals(false) && rolVacio.equals(false)){
 			
