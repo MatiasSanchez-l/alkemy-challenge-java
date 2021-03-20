@@ -1,7 +1,10 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
+import java.util.TreeSet;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,9 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.edu.unlam.tallerweb1.modelo.User;
+import ar.edu.unlam.tallerweb1.servicios.ServiceSubject;
 
 @Controller
 public class ControlerMateriaInscripcion {
+	
+	@Autowired
+	private ServiceSubject serviceSubject;
 	
 	@RequestMapping(path = "/inscripcion", method = RequestMethod.GET)
 	public ModelAndView irAHome(HttpServletRequest request) {
@@ -26,8 +33,11 @@ public class ControlerMateriaInscripcion {
 		
 		ModelMap modelo = new ModelMap();
 		
+		TreeSet subjectListSorted = serviceSubject.getListOfSubjectsSortedAlphabetically();
+		
+		modelo.put("subjects", subjectListSorted);
 		modelo.put("usuarioLogueado", usuarioLogueado);
-		modelo.put("title", "Inscripcion");
+		modelo.put("title", "Inscripci&oacute;n");
 		return new ModelAndView("inscripcion", modelo);
 	}
 }

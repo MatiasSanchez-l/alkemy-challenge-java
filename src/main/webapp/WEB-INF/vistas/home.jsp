@@ -12,7 +12,7 @@
 					<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/administrar">Administrar</a>
 				</c:if>
 				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/inscripcion">Inscripción a Materias</a>
-				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/materia">Ver Materias</a>
+				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/materias">Ver Materias</a>
 				<a type="button" class="btn btn-info m-2" href="/ChallengeAlkemy/materias-inscriptas">Materias En Curso</a>
 			</div>
 		</div>

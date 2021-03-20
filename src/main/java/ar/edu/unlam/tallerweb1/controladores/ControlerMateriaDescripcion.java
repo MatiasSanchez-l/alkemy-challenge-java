@@ -22,7 +22,7 @@ public class ControlerMateriaDescripcion {
 	@Autowired
 	private ServiceSubject serviceSubject;
 	
-	@RequestMapping(path = "/materia", method = RequestMethod.GET)
+	@RequestMapping(path = "/materias", method = RequestMethod.GET)
 	public ModelAndView irAHome(HttpServletRequest request) {
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null
 				? (User) request.getSession().getAttribute("USUARIO")
@@ -39,7 +39,7 @@ public class ControlerMateriaDescripcion {
 		modelo.put("subjects", subjectListSorted);
 		modelo.put("usuarioLogueado", usuarioLogueado);
 		modelo.put("title", "Materias");
-		return new ModelAndView("materia", modelo);
+		return new ModelAndView("materias", modelo);
 	}
 	
 	@RequestMapping(path = "/materia/descripcion", method = RequestMethod.GET)

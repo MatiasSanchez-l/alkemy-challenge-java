@@ -8,6 +8,9 @@
 					<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 					<title>${title}</title>
 					<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+					<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+          crossorigin="anonymous"/>
 					<script 
 						src="https://code.jquery.com/jquery-3.6.0.js"
 						integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -37,7 +40,7 @@
         									<a class="nav-link" href="/ChallengeAlkemy/inscripcion">Inscripci&oacute;n a Materias</a>
       									</li>
       									<li class="nav-item">
-        									<a class="nav-link" href="/ChallengeAlkemy/materia">Ver Materias</a>
+        									<a class="nav-link" href="/ChallengeAlkemy/materias">Ver Materias</a>
       									</li>
       									<li class="nav-item">
         									<a class="nav-link" href="/ChallengeAlkemy/materias-inscriptas">Materias En Curso</a>
