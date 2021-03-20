@@ -8,4 +8,5 @@ public interface RepositorySubject {
 	List<Subject> getListOfSubjects();
 
 	Subject getSubjectById(Long id);
+
 }

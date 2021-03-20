@@ -47,7 +47,7 @@
       									</li>
       								</c:if>
       								<li class="nav-item">
-        								<a class="nav-link active" href="cerrarSesion">Cerrar sesi&oacute;n</a>
+        								<a class="nav-link active" href="/ChallengeAlkemy/cerrarSesion">Cerrar sesi&oacute;n</a>
       								</li>
     							</ul>
   							</div>

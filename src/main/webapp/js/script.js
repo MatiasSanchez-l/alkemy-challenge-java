@@ -17,7 +17,6 @@ $(document).ready(function() {
                 rol: rol
             }
         }).done(function(datosLogin) {
-            console.log(datosLogin);
             $("#dniVacio").html("");
             $("#legajoVacio").html("");
             $("#passwordVacio").html("");
@@ -46,7 +45,6 @@ $(document).ready(function() {
 
             if(datosLogin.legajoVacio== false && datosLogin.passwordVacio == false && datosLogin.rolVacio == false && datosLogin.errorLogin == false 
                 && datosLogin.dniVacio == false){
-                    console.log("sdas");
                 window.location = "/ChallengeAlkemy/home";
             }
             
@@ -59,60 +57,47 @@ $(document).ready(function() {
  $("#formularioInscripcion").submit(function(event) {
     event.preventDefault();
     var post_url = $(this).attr("action");
-    var form_datos = $(this).serialize();
-    var subjectId = $(".materiaAInscribirse").val();
-    var userId = $("#usuarioLogueadoId").val();
-    console.log(form_datos);
-    console.log(subjectId);
-    console.log(userId);
+    var subjectIds = $(this).serialize();
+    var subjectIdsArray = [];
+    $.each($("input[id^='materiaAInscribirse']:checked"), function(){            
+        subjectIdsArray.push($(this).val());
+    });
 
-    //input[type=checkbox][name=gender]:checked").val()
 
-    /*$.ajax({
+    $.ajax({
         type: 'POST',
         url: post_url,
         data: {
-            dni: dni,
-            legajo: legajo,
-            password: password,
-            rol: rol
+            subjectIds: subjectIds,
         }
-    }).done(function(datosLogin) {
-        console.log(datosLogin);
-        $("#dniVacio").html("");
-        $("#legajoVacio").html("");
-        $("#passwordVacio").html("");
-        $("#rolVacio").html("");
-        $("#errorLogin").html("");
-        if (datosLogin.dniVacio == true) {
-            $("#dniVacio")
-                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Debe completar dni.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        }
-        if (datosLogin.legajoVacio == true) {
-            $("#legajoVacio")
-                .html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Debe completar legajo.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        }
-        if (datosLogin.passwordVacio == true) {
-            $("#passwordVacio")
-                .html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Debe completar password.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        }
-        if (datosLogin.rolVacio == true) {
-            $("#rolVacio")
-                .html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Debe completar rol.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-        }
-        if (datosLogin.errorLogin == true) {
-            $("#errorLogin")
-                .html('<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>DNI/legajo/contrasenia/tipo incorrecto.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+    }).done(function(datosEnroll) {
+       
+        $("#admin").html("");
+        $("#enrolled").html("");
+        if (datosEnroll.enrolled == true) {
+            $("#enrolled")
+                .html('<div class="alert alert-success alert-dismissible fade show mt-2" role="alert"><strong>Se inscribio correctamente!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
+                for (let i = 0; i < subjectIdsArray.length; i++) {
+                    var subjectId = "#tr"+subjectIdsArray[i];
+                    console.log(subjectId);
+                    $(subjectId).hide();
+                }
         }
 
-        if(datosLogin.legajoVacio== false && datosLogin.passwordVacio == false && datosLogin.rolVacio == false && datosLogin.errorLogin == false 
-            && datosLogin.dniVacio == false){
-                console.log("sdas");
-            window.location = "/ChallengeAlkemy/home";
+        if (datosEnroll.enrolled == false) {
+            $("#enrolled")
+                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripcion.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         }
-        */
-    });/*.fail(function() {
-        console.log("error al cargar AJAX login");
-    });*/
 
+        if (datosEnroll.admin == true) {
+            $("#admin")
+                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Los admins no se pueden inscribir a materias.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        }
+        
+        
+    }).fail(function() {
+        console.log("error al cargar AJAX inscripcion");
+        });
+    });
 });

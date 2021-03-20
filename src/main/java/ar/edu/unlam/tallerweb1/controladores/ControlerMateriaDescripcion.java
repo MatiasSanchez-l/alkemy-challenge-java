@@ -23,7 +23,7 @@ public class ControlerMateriaDescripcion {
 	private ServiceSubject serviceSubject;
 	
 	@RequestMapping(path = "/materias", method = RequestMethod.GET)
-	public ModelAndView irAHome(HttpServletRequest request) {
+	public ModelAndView subjectView(HttpServletRequest request) {
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null
 				? (User) request.getSession().getAttribute("USUARIO")
 				: null;
@@ -43,7 +43,7 @@ public class ControlerMateriaDescripcion {
 	}
 	
 	@RequestMapping(path = "/materia/descripcion", method = RequestMethod.GET)
-	public ModelAndView irAHome(
+	public ModelAndView subjectDescription(
 			@RequestParam(value = "id", required = false) Long id,
 			HttpServletRequest request) {
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null

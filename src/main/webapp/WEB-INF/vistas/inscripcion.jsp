@@ -4,6 +4,8 @@
 			<h1>Inscripci&oacute;n a materias</h1>
 			<div class="col-12">
             	<h4 class="text-center"><span class="text-info">*</span>Materias Disponibles</h4>
+            	 <h5 class="text-danger" id="admin"></h5>
+            	  <h5 class="text-success" id="enrolled"></h5>
             	<c:if test="${not empty subjects}">
             		<form action="validarInscripcion" method="POST" id="formularioInscripcion">
              		<div class="table-responsive">
@@ -20,7 +22,7 @@
                     		<tbody>
                     			<c:forEach items="${subjects}" var="subject">
                     			<c:if test="${subject.getMax_places() > 0}">
-                        		<tr>
+                        		<tr id="tr${subject.getId()}">
                         			<td><a href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a></td>
                             		<td>${subject.getStart_time()}:00 - ${subject.getFinish_time()}:00</td>
                             		<td>${subject.getShift()}</td>
@@ -39,7 +41,6 @@
             			</table>
         			</div>
         			<div class="text-right">
-        				<input type="hidden" value="${usuarioLogueado.getId()}" name="usuarioLogueadoId" id="usuarioLogueadoId">
         				<button type="submit" class="button btn-info">Inscribirse</button>
         			</div>
         			</form>

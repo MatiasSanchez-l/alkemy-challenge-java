@@ -13,7 +13,7 @@ import ar.edu.unlam.tallerweb1.modelo.User;
 @Controller
 public class ControlerHome {
 	@RequestMapping(path = "/home", method = RequestMethod.GET)
-	public ModelAndView irAHome(HttpServletRequest request) {
+	public ModelAndView homeView(HttpServletRequest request) {
 		
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null
 				? (User) request.getSession().getAttribute("USUARIO")

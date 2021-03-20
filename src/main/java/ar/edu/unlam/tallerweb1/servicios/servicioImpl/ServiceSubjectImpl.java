@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.servicios.servicioImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -7,9 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.edu.unlam.tallerweb1.modelo.Enroll;
 import ar.edu.unlam.tallerweb1.modelo.Subject;
 import ar.edu.unlam.tallerweb1.modelo.SubjectsSortedAlphabetically;
+import ar.edu.unlam.tallerweb1.modelo.User;
+import ar.edu.unlam.tallerweb1.repositorios.RepositoryEnroll;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorySubject;
+import ar.edu.unlam.tallerweb1.repositorios.RepositoryUser;
 import ar.edu.unlam.tallerweb1.servicios.ServiceSubject;
 
 @Service
@@ -18,6 +23,8 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	
 	@Autowired
 	private RepositorySubject repositorysubject;
+	@Autowired
+	private RepositoryEnroll repositoryEnroll;
 	
 	@Override
 	public List<Subject> getListOfSubjects() {
@@ -41,6 +48,50 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	@Override
 	public Subject getSubjectById(Long id) {
 		return repositorysubject.getSubjectById(id);
+	}
+
+	@Override
+	public TreeSet<Subject> getListOfSubjectsWhereStudentIsNotEnroll(User student) {
+		
+		TreeSet<Subject> subjectList= this.getListOfSubjectsSortedAlphabetically();
+		List<Enroll> enrollList = repositoryEnroll.getEnrollList();
+		
+		for (Enroll enroll : enrollList) {
+			if(enroll.getStuden().getId().equals(student.getId())) {
+				subjectList.remove(enroll.getSubject());
+			}
+		}
+		
+		return subjectList;
+	}
+	
+	@Override
+	public TreeSet<Subject> getListOfSubjectsWhereStudentIsEnroll(User student) {
+		System.out.println("holi");
+		List<Subject> subjectList= new ArrayList<Subject>();
+		List<Enroll> enrollList = repositoryEnroll.getEnrollList();
+		
+		for (Enroll enroll : enrollList) {
+			if(enroll.getStuden().getId().equals(student.getId())) {
+				subjectList.add(enroll.getSubject());
+			}
+		}
+		
+		TreeSet<Subject> subjectListSorted = sortSubjectsAlphabetically(subjectList);
+		
+		return subjectListSorted;
+	}
+
+	@Override
+	public TreeSet<Subject> sortSubjectsAlphabetically(List<Subject> subjects) {
+
+		SubjectsSortedAlphabetically SortedAlphabetically = new SubjectsSortedAlphabetically();
+
+		TreeSet<Subject> SubjectsSortedAlphabetically = new TreeSet<Subject>(SortedAlphabetically);
+
+		SubjectsSortedAlphabetically.addAll(subjects);
+
+		return SubjectsSortedAlphabetically;
 	}
 
 }

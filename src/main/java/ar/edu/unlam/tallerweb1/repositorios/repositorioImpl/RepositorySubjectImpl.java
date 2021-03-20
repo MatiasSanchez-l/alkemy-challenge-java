@@ -3,6 +3,7 @@ package ar.edu.unlam.tallerweb1.repositorios.repositorioImpl;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -24,5 +25,4 @@ public class RepositorySubjectImpl implements RepositorySubject {
 	public Subject getSubjectById(Long id) {
 		return sessionFactory.getCurrentSession().get(Subject.class, id);
 	}
-
 }

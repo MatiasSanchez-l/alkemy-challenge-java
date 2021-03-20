@@ -56,7 +56,6 @@ public class ControlerLogin {
 			@RequestParam(value = "password", required = false) String password,
 			@RequestParam(value = "rol", required = false) String rol,
 			HttpServletRequest request) {
-		ModelMap model = new ModelMap();
 		Gson gson = new Gson();
 		JsonObject json = new JsonObject();
 		
