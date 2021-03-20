@@ -9,7 +9,7 @@
                             <c:forEach items="${subjects}" var="subject">
                                 <div class="col-12 col-md-4">
                                     <div style="height: fit-content;">
-                                        <a href="#">${subject.getName()}</a>
+                                        <a href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a>
                                     </div>
                                 </div>
                             </c:forEach>

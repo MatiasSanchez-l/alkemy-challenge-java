@@ -38,4 +38,9 @@ public class ServiceSubjectImpl implements ServiceSubject{
 		return SubjectsSortedAlphabetically;
 	}
 
+	@Override
+	public Subject getSubjectById(Long id) {
+		return repositorysubject.getSubjectById(id);
+	}
+
 }

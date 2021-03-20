@@ -20,4 +20,9 @@ public class RepositorySubjectImpl implements RepositorySubject {
 		return sessionFactory.getCurrentSession().createCriteria(Subject.class).list();
 	}
 
+	@Override
+	public Subject getSubjectById(Long id) {
+		return sessionFactory.getCurrentSession().get(Subject.class, id);
+	}
+
 }

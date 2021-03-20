@@ -9,4 +9,5 @@ public interface ServiceSubject {
 	
 	List<Subject> getListOfSubjects();
 	TreeSet<Subject> getListOfSubjectsSortedAlphabetically();
+	Subject getSubjectById(Long id);
 }

@@ -6,4 +6,6 @@ import ar.edu.unlam.tallerweb1.modelo.Subject;
 
 public interface RepositorySubject {
 	List<Subject> getListOfSubjects();
+
+	Subject getSubjectById(Long id);
 }

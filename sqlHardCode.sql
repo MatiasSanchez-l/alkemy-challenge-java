@@ -23,7 +23,7 @@ estructurada y orientada objetos, de manera de capacitarlos en lenguajes, herram
 metodologías de programación básicas', 2),
 (2, 11, 1, 'Informática', 'maniana', 8, 'Familiarizar al alumno en los conceptos y términos básicos para obtener
 conocimientos referidos a las tecnologías de la información y las comunicaciones.', 3),
-(3, 6, 20, 'Base de Datos I', 'tarde', 11, 'El programa de la asignatura pretende introducir al alumno en los conceptos, modelado,
+(3, 11, 20, 'Base de Datos I', 'tarde', 6, 'El programa de la asignatura pretende introducir al alumno en los conceptos, modelado,
 consultas y utilización de base de datos relacionales usados como almacenamiento de
 datos y procedimientos para sitios Web.', 2),
 (4, 11, 20, 'Programación Web I', 'maniana', 8, 'El	programa	de	la	asignatura	pretende	introducir	al	alumno	en	el	programación	Web,	de	
