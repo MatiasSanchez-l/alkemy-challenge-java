@@ -7,9 +7,9 @@
                     <div class="container">
                         <div class="row text-center">
                             <c:forEach items="${subjects}" var="subject">
-                                <div class="col-12 col-md-4 mb-2 mt-2">
-                                    <div class="bg-info" style="height: fit-content;">
-                                        <a href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a>
+                                <div class="col-12 col-md-4 mb-2 mt-2 card">
+                                    <div class="border-info card-body" style="height: fit-content;">
+                                        <a class="card-title" href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a>
                                     </div>
                                 </div>
                             </c:forEach>
