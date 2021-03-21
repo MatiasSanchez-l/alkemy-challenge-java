@@ -38,6 +38,7 @@ value(2,1, 3),
 
 insert into user(id, dni, lastname, legajo, name, password, rol_id)
 value(1, 100, 'Sanchez', 1, 'Matias', 'student',2),
+(3, 102, 'Contreras', 3, 'Sabrina', 'student',2),
 (2, 101, 'Fagliano', 2,'Santiago', 'admin',1);
 
 select * from day;

@@ -7,8 +7,8 @@
                     <div class="container">
                         <div class="row text-center">
                             <c:forEach items="${subjects}" var="subject">
-                                <div class="col-12 col-md-4">
-                                    <div style="height: fit-content;">
+                                <div class="col-12 col-md-4 mb-2 mt-2">
+                                    <div class="bg-info" style="height: fit-content;">
                                         <a href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a>
                                     </div>
                                 </div>

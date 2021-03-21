@@ -71,6 +71,11 @@ public class ControlerMateriaInscripcion {
 				? (User) request.getSession().getAttribute("USUARIO")
 				: null;
 		
+		if(usuarioLogueado == null) {
+			json.addProperty("error", true);
+			return gson.toJson(json);
+		}
+		
 		if(usuarioLogueado.getRol().getDescription().equals("student")) {
 			Boolean enrolled = false; 
 			

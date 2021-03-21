@@ -124,4 +124,12 @@ public class ServiceSubjectImpl implements ServiceSubject{
 		subject.setMax_places(places);
 	}
 
+	@Override
+	public void maxPlacesMinusOne(Long id) {
+		Subject subject = getSubjectById(id);
+		Long maxPlacesMinusOne = subject.getMax_places() - 1;
+		
+		subject.setMax_places(maxPlacesMinusOne);
+	}
+
 }

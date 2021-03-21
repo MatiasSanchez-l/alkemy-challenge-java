@@ -11,12 +11,15 @@ import ar.edu.unlam.tallerweb1.modelo.Subject;
 import ar.edu.unlam.tallerweb1.modelo.User;
 import ar.edu.unlam.tallerweb1.repositorios.RepositoryEnroll;
 import ar.edu.unlam.tallerweb1.servicios.ServiceEnroll;
+import ar.edu.unlam.tallerweb1.servicios.ServiceSubject;
 
 @Service
 @Transactional
 public class ServiceEnrollImpl implements ServiceEnroll {
 	@Autowired
 	private RepositoryEnroll repositryEnroll;
+	@Autowired
+	private ServiceSubject serviceSubject;
 	
 	@Override
 	public void enrollStudentInSubjects(User student, List<Subject> subjects) {
@@ -26,6 +29,7 @@ public class ServiceEnrollImpl implements ServiceEnroll {
 			enroll.setStuden(student);
 			enroll.setSubject(subject);
 			this.postEnroll(enroll);
+			serviceSubject.maxPlacesMinusOne(subject.getId());
 		}
 	}
 

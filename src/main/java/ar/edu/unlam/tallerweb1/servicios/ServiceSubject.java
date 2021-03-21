@@ -19,4 +19,5 @@ public interface ServiceSubject {
 	void changeFinishTime(Long id, Long time);
 	void changeShift(Long id, String time);
 	void changeMaxPlaces(Long id, Long places);
+	void maxPlacesMinusOne(Long id);
 }

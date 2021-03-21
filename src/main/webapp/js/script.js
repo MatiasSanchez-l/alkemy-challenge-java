@@ -137,6 +137,11 @@ $(document).ready(function() {
             $("#admin")
                 .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Los admins no se pueden inscribir a materias.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         }
+
+        if (datosEnroll.error == true) {
+            $("#admin")
+                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripcion.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        }
         
         
     }).fail(function() {
