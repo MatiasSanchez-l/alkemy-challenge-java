@@ -67,7 +67,7 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	
 	@Override
 	public TreeSet<Subject> getListOfSubjectsWhereStudentIsEnroll(User student) {
-		System.out.println("holi");
+		
 		List<Subject> subjectList= new ArrayList<Subject>();
 		List<Enroll> enrollList = repositoryEnroll.getEnrollList();
 		
@@ -92,6 +92,36 @@ public class ServiceSubjectImpl implements ServiceSubject{
 		SubjectsSortedAlphabetically.addAll(subjects);
 
 		return SubjectsSortedAlphabetically;
+	}
+
+	@Override
+	public void changeName(Long id, String name) {
+		Subject subject = getSubjectById(id);
+		subject.setName(name);
+	}
+
+	@Override
+	public void changeStartTime(Long id, Long time) {
+		Subject subject = getSubjectById(id);
+		subject.setStart_time(time);
+	}
+
+	@Override
+	public void changeFinishTime(Long id, Long time) {
+		Subject subject = getSubjectById(id);
+		subject.setFinish_time(time);
+	}
+
+	@Override
+	public void changeShift(Long id, String shift) {
+		Subject subject = getSubjectById(id);
+		subject.setShift(shift);
+	}
+
+	@Override
+	public void changeMaxPlaces(Long id, Long places) {
+		Subject subject = getSubjectById(id);
+		subject.setMax_places(places);
 	}
 
 }

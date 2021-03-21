@@ -1,4 +1,46 @@
 $(document).ready(function() {
+    /************************MODIFICAR MATERIA**********************************/
+    $(document).on("click", ".editarScheduleBoton", function() {
+        var schedule = $(this).data('schedule');
+        var day = $(this).data('day');
+        var startTime = $(this).data('starttime');
+        var finishTime = $(this).data('finishtime');
+        var shift = $(this).data('shift');
+        var maxPlaces = $(this).data('maxplaces');
+        var teacher = $(this).data('teacher');
+        var name = $(this).data('name');
+        
+        $.ajax({
+            url: 'getTeachersAjax'
+        }).done(function(datosTeachers) {
+            for(var property in datosTeachers) {
+                $(".formularioModificarMateria .inputTeacher").html(datosTeachers[property]);
+            }
+            $(".formularioModificarMateria .modal-footer #scheduleId").val(schedule);
+            $(".formularioModificarMateria .inputName").val(name);
+            $(".formularioModificarMateria .inputDay").val(day);
+            $(".formularioModificarMateria .inputStartTime").val(startTime);
+            $(".formularioModificarMateria .inputFinishTime").val(finishTime);
+            $(".formularioModificarMateria .inputShift").val(shift);
+            $(".formularioModificarMateria .inputMaxPlaces").val(maxPlaces);
+            $(".formularioModificarMateria .inputTeacher").val(teacher);
+        }).fail(function() {
+            console.log("error al cargar AJAX modal editar materia");
+            });
+    });
+    /************************MODIFICAR PROFESOR**********************************/
+    $(document).on("click", ".editarTeacherBoton", function() {
+        var name = $(this).data('name');
+        var lastName = $(this).data('lastname');
+        var dni = $(this).data('dni');
+        var id = $(this).data('teacher');
+
+        $(".formularioModificarProfesor .modal-footer #teacherId").val(id);
+        $(".formularioModificarProfesor .inputName").val(name);
+        $(".formularioModificarProfesor .inputLastname").val(lastName);
+        $(".formularioModificarProfesor .inputDni").val(dni);
+    });
+
   /************************AJAX DE LOGIN**********************************/
  $("#formularioLogin").submit(function(event) {
         event.preventDefault();
@@ -7,6 +49,7 @@ $(document).ready(function() {
         var legajo = $("#legajo").val();
         var password = $("#password").val();
         var rol = $("#rol").val();
+        
         $.ajax({
             type: 'POST',
             url: post_url,
@@ -53,7 +96,7 @@ $(document).ready(function() {
         });
     });
 
-    /************************AJAX DE INSCRIPCION A MATERIAS**********************************/
+ /************************AJAX DE INSCRIPCION A MATERIAS**********************************/
  $("#formularioInscripcion").submit(function(event) {
     event.preventDefault();
     var post_url = $(this).attr("action");

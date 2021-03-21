@@ -9,7 +9,7 @@
             	<c:if test="${not empty subjects}">
             		<form action="validarInscripcion" method="POST" id="formularioInscripcion">
              		<div class="table-responsive">
-                		<table class="table" id="mydatatableChoferProforma">
+                		<table class="table table-bordered" id="mydatatableSubject">
                     		<thead class="thead-dark">
                     			<tr>
                     				<th scope="col">Nombre</th>
@@ -38,6 +38,15 @@
                        			</c:if>
                         		</c:forEach>
                 			</tbody>
+                			<tfoot class="thead-dark">
+                        	<tr>
+                    			<th scope="col">Nombre</th>
+                        			<th scope="col">Horario</th>
+                        			<th scope="col">Turno</th>
+                        			<th scope="col">Cupos</th>
+                        			<th scope="col"><i class="fas fa-check-circle"></i></th>
+                  			</tr>
+                        </tfoot>
             			</table>
         			</div>
         			<div class="text-right">

@@ -37,7 +37,7 @@
  							 	</div>
 								<button class="btn btn-lg btn-primary btn-block text-uppercase bg-info" type="submit">Iniciar
                                     sesi&oacute;n</button>
-                            <form>
+                            </form>
                         </div>
                     </div>
                 </div>
