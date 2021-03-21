@@ -1,9 +1,9 @@
 <%@ include file="header.jsp" %>
 	<main>
 		<div class = "container">
-			<h1>Inscripci&oacute;n a materias</h1>
+			<h1 class="text-center">Inscripci&oacute;n a materias</h1>
 			<div class="col-12">
-            	<h4 class="text-center"><span class="text-info">*</span>Materias Disponibles</h4>
+            	<h3 class="text-center text-md-left text-dark mb-3"><i class="fas fa-graduation-cap"></i> Materias Disponibles</h3>
             	 <h5 class="text-danger" id="admin"></h5>
             	  <h5 class="text-success" id="enrolled"></h5>
             	<c:if test="${not empty subjects}">
@@ -16,7 +16,7 @@
                         			<th scope="col">Horario</th>
                         			<th scope="col">Turno</th>
                         			<th scope="col">Cupos</th>
-                        			<th scope="col"><i class="fas fa-check-circle"></i></th>
+                        			<th scope="col" class="text-center"><i class="fas fa-check-circle"></i></th>
                   				</tr>
                     		</thead>
                     		<tbody>
@@ -44,7 +44,7 @@
                         			<th scope="col">Horario</th>
                         			<th scope="col">Turno</th>
                         			<th scope="col">Cupos</th>
-                        			<th scope="col"><i class="fas fa-check-circle"></i></th>
+                        			<th scope="col" class="text-center"><i class="fas fa-check-circle"></i></th>
                   			</tr>
                         </tfoot>
             			</table>

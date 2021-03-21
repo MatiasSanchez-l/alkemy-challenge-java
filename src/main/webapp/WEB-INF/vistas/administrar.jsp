@@ -5,29 +5,29 @@
                 <h1 class="text-dark mb-3 text-center">Administrar</h1>
                 <c:if test="${editarMateria == true}">
                 	<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                		<strong>Se edito la materia correctamente!</strong>
+                		<strong>Se edit&oacute; la materia correctamente!</strong>
                 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 	</div>
                 </c:if>
                 <c:if test="${editarProfesor == true}">
                 	<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
-                		<strong>Se edito el/la profesor/a correctamente!</strong>
+                		<strong>Se edit&oacute; el/la profesor/a correctamente!</strong>
                 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 	</div>
                 </c:if>
                 <c:if test="${editarMateria == false}">
                 	<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-                		<strong>Ocurrio un error al editar la materia.</strong>
+                		<strong>Ocurri&oacute; un error al editar la materia.</strong>
                 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 	</div>
                 </c:if>
                 <c:if test="${editarProfesor == false}">
                 	<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
-                		<strong>Ocurrio un error al editar profesor/a.</strong>
+                		<strong>Ocurri&oacute; un error al editar profesor/a.</strong>
                 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 	</div>
                 </c:if>
-                <h3 class="text-center text-md-left text-dark mb-3"><i class="fas fa-truck"></i> Administrar Materias</h3>
+                <h3 class="text-center text-md-left text-dark mb-3"><i class="fas fa-school"></i> Materias</h3>
                 <c:if test="${not empty schedules}">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="mydatatableSchedule">
@@ -53,7 +53,7 @@
                             		<td>${subject.getShift()}</td>
                             		<td>${schedule.getTeacher().getLastname()} ${schedule.getTeacher().getName()}</td>
                             		<td>${subject.getMax_places()}</td>
-                            		<td class="dropdown dropleft">
+                            		<td class="dropdown dropleft text-center">
                             			<a class="btn btn-outline-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink${schedule.getId()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             			</a>
                             				<div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="dropdownMenuLink${schedule.getId()}">
@@ -83,7 +83,7 @@
                 </c:if>
             </article>
           	<article class=" justify-content-center mt-4 ancho2">
-                <h3 class="text-center text-md-left text-dark mb-3"><i class="fas fa-truck"></i> Administrar Profesores</h3>
+                <h3 class="text-center text-md-left text-dark mb-3"><i class="fas fa-chalkboard-teacher"></i> Profesores</h3>
                 <c:if test="${not empty teachers}">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="mydatatableSchedule">
@@ -108,7 +108,7 @@
                             		<c:if test="${teacher.getActive() == false}">
                             			<td>no</td>
                             		</c:if>
-                            		<td class="dropdown dropleft">
+                            		<td class="dropdown dropleft text-center">
                             			<a class="btn btn-outline-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink${teacher.getId()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             			</a>
                             				<div class="dropdown-menu dropdown-menu-right p-2" aria-labelledby="dropdownMenuLink${teacher.getId()}">

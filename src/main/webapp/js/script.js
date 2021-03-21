@@ -119,7 +119,7 @@ $(document).ready(function() {
         $("#enrolled").html("");
         if (datosEnroll.enrolled == true) {
             $("#enrolled")
-                .html('<div class="alert alert-success alert-dismissible fade show mt-2" role="alert"><strong>Se inscribio correctamente!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                .html('<div class="alert alert-success alert-dismissible fade show mt-2" role="alert"><strong>Se inscribi&oacute; correctamente!</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
 
                 for (let i = 0; i < subjectIdsArray.length; i++) {
                     var subjectId = "#tr"+subjectIdsArray[i];
@@ -130,7 +130,7 @@ $(document).ready(function() {
 
         if (datosEnroll.enrolled == false) {
             $("#enrolled")
-                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripcion.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripci&oacute;n.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         }
 
         if (datosEnroll.admin == true) {
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
         if (datosEnroll.error == true) {
             $("#admin")
-                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripcion.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+                .html('<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert"><strong>Ocurrio un error en la inscripci&oacute;n.</strong><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         }
         
         

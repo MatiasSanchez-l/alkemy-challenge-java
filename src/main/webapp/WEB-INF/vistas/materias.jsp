@@ -1,7 +1,7 @@
 <%@ include file="header.jsp" %>
 	<main>
 		<div class = "container">
-			<h1>Materias</h1>
+			<h1 class="text-center">Materias</h1>
 			 <c:if test="${not empty subjects}">
                 <div class="album py-5 contenedorAlbum">
                     <div class="container">

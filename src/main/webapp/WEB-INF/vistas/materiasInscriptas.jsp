@@ -6,6 +6,7 @@
 			<c:if test="${not empty subjects}">
 				<div class="album py-5 contenedorAlbum">
                     <div class="container">
+                    	<p>Actualmente te encuentras inscripto en:</p>
                         <div class="row text-center">
                             <c:forEach items="${subjects}" var="subject">
                                 <div class="col-12 col-md-4 mb-2 mt-2 card">
