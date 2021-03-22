@@ -15,6 +15,12 @@
                 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 	</div>
                 </c:if>
+                <c:if test="${dniError == true}">
+                	<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                		<strong>Ya existe un profesor con ese dni.</strong>
+                		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                	</div>
+                </c:if>
                 <c:if test="${editarMateria == false}">
                 	<div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
                 		<strong>Ocurri&oacute; un error al editar la materia.</strong>
@@ -240,6 +246,7 @@
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Volver</button>
                                    	<input type="hidden" id="teacherId" name="teacherId">
+                                   	<input type="hidden" id="currentDni" name="currentDni">
                                     <button type="submit" class="btn btn-outline-info">Modificar</button>
                                 </div>
                             </form>

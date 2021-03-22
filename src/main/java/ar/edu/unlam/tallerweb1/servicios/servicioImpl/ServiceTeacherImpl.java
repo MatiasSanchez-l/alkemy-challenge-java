@@ -65,4 +65,19 @@ public class ServiceTeacherImpl implements ServiceTeacher {
 		
 	}
 
+	@Override
+	public Boolean teacherWithExistingDni(Long dni) {
+		List<Teacher> teachers = getTeacherList();
+		Boolean result = false;
+		for (Teacher teacher : teachers) {
+			System.out.println("comparo profesor dni " + teacher.getDni() + " con el dni " + dni);
+			if(teacher.getDni().compareTo(dni) == 0) {
+				System.out.println("lo cambie a true");
+				result = true;
+				return result;
+			}
+		}
+		return result;
+	}
+
 }

@@ -38,6 +38,7 @@ public class ControlerAdministrar {
 	public ModelAndView adminView(
 			@RequestParam(value = "editarMateria", required = false) Boolean editarMateria,
 			@RequestParam(value = "editarProfesor", required = false) Boolean editarProfesor,
+			@RequestParam(value = "dniError", required = false) Boolean dniError,
 			HttpServletRequest request) {
 		
 		User usuarioLogueado = request.getSession().getAttribute("USUARIO") != null
@@ -57,6 +58,7 @@ public class ControlerAdministrar {
 		modelo.put("usuarioLogueado", usuarioLogueado);
 		modelo.put("editarMateria", editarMateria);
 		modelo.put("editarProfesor", editarProfesor);
+		modelo.put("dniError", dniError);
 		modelo.put("schedules", schedules);
 		modelo.put("teachers", teachers);
 		modelo.put("title", "Administrar");
@@ -102,6 +104,7 @@ public class ControlerAdministrar {
 			@RequestParam(value = "name", required = false) String name,
 			@RequestParam(value = "lastname", required = false) String lastname,
 			@RequestParam(value = "dni", required = false) Long dni,
+			@RequestParam(value = "currentDni", required = false) Long currentDni,
 			@RequestParam(value = "active", required = false) Boolean active,
 			@RequestParam(value = "teacherId", required = false) Long id,
 			HttpServletRequest request) {
@@ -112,6 +115,15 @@ public class ControlerAdministrar {
 		if(usuarioLogueado == null) {
 			return new ModelAndView("redirect:/administrar?editarProfesor=false");
 		}
+		
+		if(currentDni != dni) {
+			System.out.println("Entre al if de currentDni != dni");
+			Boolean existingDni = serviceTeacher.teacherWithExistingDni(dni);
+			if(existingDni) {
+				return new ModelAndView("redirect:/administrar?dniError=true");
+			}
+		}
+		System.out.println("Pase de largo");
 		serviceTeacher.setName(id, name);
 		serviceTeacher.setLastName(id, lastname);
 		serviceTeacher.setDni(id, dni);

@@ -35,10 +35,11 @@ $(document).ready(function() {
         var dni = $(this).data('dni');
         var id = $(this).data('teacher');
 
-        $(".formularioModificarProfesor .modal-footer #teacherId").val(id);
         $(".formularioModificarProfesor .inputName").val(name);
         $(".formularioModificarProfesor .inputLastname").val(lastName);
         $(".formularioModificarProfesor .inputDni").val(dni);
+        $(".formularioModificarProfesor .modal-footer #teacherId").val(id);
+        $(".formularioModificarProfesor .modal-footer #currentDni").val(dni);
     });
 
   /************************AJAX DE LOGIN**********************************/
