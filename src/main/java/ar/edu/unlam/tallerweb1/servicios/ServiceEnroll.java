@@ -10,4 +10,7 @@ public interface ServiceEnroll {
 	void postEnroll(Enroll enroll);
 	void enrollStudentInSubjects(User student, List<Subject> subjects);
 	List<Enroll> getEnrollList();
+	List<Enroll> getEnrollListBySubject(Subject subject);
+	Boolean studentAlreadyInSubject(Long studentId, Long subjectId);
+	Enroll getEnrollByStudentAndSubject(User student, Subject subject);
 }

@@ -6,4 +6,6 @@ import ar.edu.unlam.tallerweb1.modelo.User;
 public interface RepositoryUser {
 	
 	User consultarUsuario (User usuario);
+
+	User getUserById(Long id);
 }

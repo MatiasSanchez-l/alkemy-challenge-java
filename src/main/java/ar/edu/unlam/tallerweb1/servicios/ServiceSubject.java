@@ -14,10 +14,11 @@ public interface ServiceSubject {
 	TreeSet<Subject> getListOfSubjectsSortedAlphabetically();
 	TreeSet<Subject> sortSubjectsAlphabetically(List<Subject> subjects);
 	Subject getSubjectById(Long id);
-	void changeName(Long id, String name);
+	void setName(Long id, String name);
 	void changeStartTime(Long id, Long time);
 	void changeFinishTime(Long id, Long time);
 	void changeShift(Long id, String time);
 	void changeMaxPlaces(Long id, Long places);
 	void maxPlacesMinusOne(Long id);
+	void setCurrentPlaces(Long id);
 }

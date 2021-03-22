@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.repositorios.repositorioImpl;
 
+import ar.edu.unlam.tallerweb1.modelo.Teacher;
 import ar.edu.unlam.tallerweb1.modelo.User;
 import ar.edu.unlam.tallerweb1.repositorios.RepositoryUser;
 
@@ -29,6 +30,11 @@ public class RepositoryUserImpl implements RepositoryUser {
 				.add(Restrictions.eq("password", usuario.getPassword()))
 				.add(Restrictions.eq("rol", usuario.getRol()))
 				.uniqueResult();
+	}
+
+	@Override
+	public User getUserById(Long id) {
+		return sessionFactory.getCurrentSession().get(User.class, id);
 	}
 
 }

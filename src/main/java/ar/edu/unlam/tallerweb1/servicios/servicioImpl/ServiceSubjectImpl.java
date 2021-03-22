@@ -95,7 +95,7 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	}
 
 	@Override
-	public void changeName(Long id, String name) {
+	public void setName(Long id, String name) {
 		Subject subject = getSubjectById(id);
 		subject.setName(name);
 	}
@@ -122,6 +122,7 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	public void changeMaxPlaces(Long id, Long places) {
 		Subject subject = getSubjectById(id);
 		subject.setMax_places(places);
+		setCurrentPlaces(id);
 	}
 
 	@Override
@@ -130,6 +131,19 @@ public class ServiceSubjectImpl implements ServiceSubject{
 		Long maxPlacesMinusOne = subject.getMax_places() - 1;
 		
 		subject.setMax_places(maxPlacesMinusOne);
+	}
+
+	@Override
+	public void setCurrentPlaces(Long id) {
+		Subject subject = getSubjectById(id);
+		Long studentsEnroll = 0L;
+		
+		List <Enroll> enrolls = repositoryEnroll.getEnrollListBySubject(subject);
+		studentsEnroll = new Long(enrolls.size());
+		
+		Long currentPlaces = subject.getMax_places() - studentsEnroll;
+		
+		subject.setCurrent_places(currentPlaces);
 	}
 
 }

@@ -123,8 +123,7 @@ $(document).ready(function() {
 
                 for (let i = 0; i < subjectIdsArray.length; i++) {
                     var subjectId = "#tr"+subjectIdsArray[i];
-                    console.log(subjectId);
-                    $(subjectId).hide();
+                    $(subjectId).remove();
                 }
         }
 

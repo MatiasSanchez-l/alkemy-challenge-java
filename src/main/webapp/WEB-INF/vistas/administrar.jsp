@@ -38,6 +38,7 @@
                         		<th scope="col">Horario</th>
                         		<th scope="col">Turno</th>
                         		<th scope="col">Profesor</th>
+                        		<th scope="col">Lugares Max</th>
                         		<th scope="col">Cupos</th>
                         		<th></th>
                   			</tr>
@@ -53,6 +54,7 @@
                             		<td>${subject.getShift()}</td>
                             		<td>${schedule.getTeacher().getLastname()} ${schedule.getTeacher().getName()}</td>
                             		<td>${subject.getMax_places()}</td>
+                            		<td>${subject.getCurrent_places()}</td>
                             		<td class="dropdown dropleft text-center">
                             			<a class="btn btn-outline-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink${schedule.getId()}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             			</a>
@@ -74,6 +76,7 @@
                         		<th scope="col">Horario</th>
                         		<th scope="col">Turno</th>
                         		<th scope="col">Profesor</th>
+                        		<th scope="col">Lugares Max</th>
                         		<th scope="col">Cupos</th>
                         		<th></th>
                   			</tr>
@@ -183,7 +186,7 @@
     								</select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="text-dark" for="maxPlaces">Cupos</label>
+                                    <label class="text-dark" for="maxPlaces">Lugares M&aacute;ximos</label>
                                     <input type="number" class="form-control inputMaxPlaces" id="maxPlaces" name="maxPlaces" required>
                                 </div>
                                 <div class="modal-footer">

@@ -85,7 +85,7 @@ public class ControlerAdministrar {
 		Schedule schedule = serviceSchedule.getScheduleById(scheduleId);
 		Long subjectId = schedule.getSubject().getId();
 		
-		serviceSubject.changeName(subjectId, subjectName);
+		serviceSubject.setName(subjectId, subjectName);
 		serviceSubject.changeStartTime(subjectId, subjectStartTime);
 		serviceSubject.changeFinishTime(subjectId, subjectFinishTime);
 		serviceSubject.changeShift(subjectId, shift);

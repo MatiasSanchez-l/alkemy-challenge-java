@@ -21,12 +21,12 @@
                     		</thead>
                     		<tbody>
                     			<c:forEach items="${subjects}" var="subject">
-                    			<c:if test="${subject.getMax_places() > 0}">
+                    			<c:if test="${subject.getCurrent_places() > 0}">
                         		<tr id="tr${subject.getId()}">
                         			<td><a href="/ChallengeAlkemy/materia/descripcion?id=${subject.getId()}">${subject.getName()}</a></td>
                             		<td>${subject.getStart_time()}:00 - ${subject.getFinish_time()}:00</td>
                             		<td>${subject.getShift()}</td>
-                            		<td>${subject.getMax_places()}</td>
+                            		<td>${subject.getCurrent_places()}</td>
                             		<td>
                             			<div class="form-check text-center">
                             				<input class="form-check-input" type="checkbox" name="materiaAInscribirse" id="materiaAInscribirse${subject.getId()}" value="${subject.getId()}">

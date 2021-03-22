@@ -15,7 +15,8 @@ public class Subject{
 	private Long start_time;
 	private Long finish_time;
 	private String shift;//turno
-	private Long max_places;//cupos
+	private Long max_places;//cupos maximos
+	private Long current_places;
 	private String description;
 	@ManyToOne
 	private Teacher teacher;
@@ -67,6 +68,12 @@ public class Subject{
 	}
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
+	}
+	public Long getCurrent_places() {
+		return current_places;
+	}
+	public void setCurrent_places(Long current_places) {
+		this.current_places = current_places;
 	}
 	
 }

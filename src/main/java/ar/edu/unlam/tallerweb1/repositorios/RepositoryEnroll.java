@@ -10,4 +10,8 @@ public interface RepositoryEnroll {
 	void postEnroll(Enroll enroll);
 
 	List<Enroll> getEnrollList();
+
+	List<Enroll> getEnrollListBySubject(Subject subject);
+
+	Enroll getEnrollByStudentAndSubject(User student, Subject subject);
 }

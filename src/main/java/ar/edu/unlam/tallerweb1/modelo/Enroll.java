@@ -13,7 +13,7 @@ public class Enroll {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne
-	private User studen;
+	private User student;
 	@ManyToOne
 	private Subject subject;
 	
@@ -24,10 +24,10 @@ public class Enroll {
 		this.id = id;
 	}
 	public User getStuden() {
-		return studen;
+		return student;
 	}
 	public void setStuden(User studen) {
-		this.studen = studen;
+		this.student = studen;
 	}
 	public Subject getSubject() {
 		return subject;
