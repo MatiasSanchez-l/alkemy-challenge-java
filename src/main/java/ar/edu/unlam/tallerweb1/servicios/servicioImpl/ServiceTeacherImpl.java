@@ -38,28 +38,28 @@ public class ServiceTeacherImpl implements ServiceTeacher {
 	}
 
 	@Override
-	public void changeName(Long id, String name) {
+	public void setName(Long id, String name) {
 		Teacher teacher = getTeacherById(id);
 		teacher.setName(name);
 		
 	}
 
 	@Override
-	public void changeLastName(Long id, String lastname) {
+	public void setLastName(Long id, String lastname) {
 		Teacher teacher = getTeacherById(id);
 		teacher.setLastname(lastname);
 		
 	}
 
 	@Override
-	public void changeDni(Long id, Long dni) {
+	public void setDni(Long id, Long dni) {
 		Teacher teacher = getTeacherById(id);
 		teacher.setDni(dni);
 		
 	}
 
 	@Override
-	public void changeActive(Long id, Boolean active) {
+	public void setActive(Long id, Boolean active) {
 		Teacher teacher = getTeacherById(id);
 		teacher.setActive(active);
 		

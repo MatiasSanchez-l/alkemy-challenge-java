@@ -101,25 +101,25 @@ public class ServiceSubjectImpl implements ServiceSubject{
 	}
 
 	@Override
-	public void changeStartTime(Long id, Long time) {
+	public void setStartTime(Long id, Long time) {
 		Subject subject = getSubjectById(id);
 		subject.setStart_time(time);
 	}
 
 	@Override
-	public void changeFinishTime(Long id, Long time) {
+	public void setFinishTime(Long id, Long time) {
 		Subject subject = getSubjectById(id);
 		subject.setFinish_time(time);
 	}
 
 	@Override
-	public void changeShift(Long id, String shift) {
+	public void setShift(Long id, String shift) {
 		Subject subject = getSubjectById(id);
 		subject.setShift(shift);
 	}
 
 	@Override
-	public void changeMaxPlaces(Long id, Long places) {
+	public void setMaxPlaces(Long id, Long places) {
 		Subject subject = getSubjectById(id);
 		subject.setMax_places(places);
 		setCurrentPlaces(id);

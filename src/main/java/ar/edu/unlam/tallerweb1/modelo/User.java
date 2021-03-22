@@ -1,5 +1,6 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,9 @@ public class User {
 	private String password;
 	@ManyToOne
 	private Rol rol;
+	@Column(unique = true)
 	private Long dni;
+	@Column(unique = true)
 	private Long legajo;
 	private String name;
 	private String lastname;

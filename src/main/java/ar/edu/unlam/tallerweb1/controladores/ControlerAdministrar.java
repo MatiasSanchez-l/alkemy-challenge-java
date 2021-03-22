@@ -86,10 +86,10 @@ public class ControlerAdministrar {
 		Long subjectId = schedule.getSubject().getId();
 		
 		serviceSubject.setName(subjectId, subjectName);
-		serviceSubject.changeStartTime(subjectId, subjectStartTime);
-		serviceSubject.changeFinishTime(subjectId, subjectFinishTime);
-		serviceSubject.changeShift(subjectId, shift);
-		serviceSubject.changeMaxPlaces(subjectId, maxPlaces);
+		serviceSubject.setStartTime(subjectId, subjectStartTime);
+		serviceSubject.setFinishTime(subjectId, subjectFinishTime);
+		serviceSubject.setShift(subjectId, shift);
+		serviceSubject.setMaxPlaces(subjectId, maxPlaces);
 		
 		serviceSchedule.changeDay(scheduleId, dayId);
 		serviceSchedule.changeTeacher(scheduleId, teacherId);
@@ -112,10 +112,10 @@ public class ControlerAdministrar {
 		if(usuarioLogueado == null) {
 			return new ModelAndView("redirect:/administrar?editarProfesor=false");
 		}
-		serviceTeacher.changeName(id, name);
-		serviceTeacher.changeLastName(id, lastname);
-		serviceTeacher.changeDni(id, dni);
-		serviceTeacher.changeActive(id, active);
+		serviceTeacher.setName(id, name);
+		serviceTeacher.setLastName(id, lastname);
+		serviceTeacher.setDni(id, dni);
+		serviceTeacher.setActive(id, active);
 		
 		return new ModelAndView("redirect:/administrar?editarProfesor=true");
 	}

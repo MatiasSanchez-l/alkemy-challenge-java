@@ -8,8 +8,8 @@ public interface ServiceTeacher {
 	List<Teacher> getTeacherList();
 	String getTeachersAjax();
 	Teacher getTeacherById(Long teacherId);
-	void changeName(Long id, String name);
-	void changeLastName(Long id, String lastname);
-	void changeDni(Long id, Long dni);
-	void changeActive(Long id, Boolean active);
+	void setName(Long id, String name);
+	void setLastName(Long id, String lastname);
+	void setDni(Long id, Long dni);
+	void setActive(Long id, Boolean active);
 }
